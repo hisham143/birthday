@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-name="Sreekutty" data-birthday="2026-03-05T00:00:00+00:00" class="theme-light">
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+    <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+    <div class="love-rain" aria-hidden="true"></div>
+    <div class="lock-overlay" id="lock-overlay" aria-hidden="true">
+      <div class="lock-card">
+        <div class="lock-title">Locked Until</div>
+        <div class="lock-time">5 March 2026, 00:00 (UK)</div>
+        <div class="lock-timer">
+          <div class="lock-unit">
+            <span id="lock-days">00</span>
+            <small>Days</small>
+          </div>
+          <div class="lock-unit">
+            <span id="lock-hours">00</span>
+            <small>Hours</small>
+          </div>
+          <div class="lock-unit">
+            <span id="lock-minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="lock-unit">
+            <span id="lock-seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+        <div class="lock-note">This surprise opens right on the birthday moment.</div>
+      </div>
+    </div>
+
+    <header class="hero" id="top">
+      <nav class="top-bar">
+        <div class="brand"> </div>
+        <div class="actions">
+          <button class="icon-btn" id="music-toggle" aria-pressed="false" aria-label="Toggle music">
+            <span class="icon">♪</span>
+            <span class="label">Music</span>
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">
+            <span class="icon">☼</span>
+            <span class="label">Theme</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">A celebration of you</p>
+          <h1 class="hero-title">
+            Happy Birthday
+            <span class="hero-name" id="hero-name">Sreekutty</span>
+          </h1>
+          <p class="hero-subtext">
+            Wishing you a day filled with happiness and a year filled with joy.
+          </p>
+          <div class="hero-cta">
+            <button class="primary-btn" id="scroll-gallery">View Memories</button>
+            <button class="ghost-btn" id="scroll-message">Read the Message</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="sparkle"></div>
+        </div>
+      </div>
+
+      <div class="balloon-field" aria-hidden="true">
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+        <div class="balloon b4"></div>
+        <div class="balloon b5"></div>
+        <div class="balloon b6"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section gallery" id="gallery">
+        <div class="section-header reveal">
+          <h2>Photo Memory Gallery</h2>
+          <p>Moments that sparkle, captured forever.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-01.jpeg">
+            <img alt="Memory 1" src="assets/photos/sreekutty-01.jpeg" />
+          </button>
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-02.jpeg">
+            <img alt="Memory 2" src="assets/photos/sreekutty-02.jpeg" />
+          </button>
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-03.jpeg">
+            <img alt="Memory 3" src="assets/photos/sreekutty-03.jpeg" />
+          </button>
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-04.jpeg">
+            <img alt="Memory 4" src="assets/photos/sreekutty-04.jpeg" />
+          </button>
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-05.jpeg">
+            <img alt="Memory 5" src="assets/photos/sreekutty-05.jpeg" />
+          </button>
+          <button class="photo-card reveal" data-full="assets/photos/sreekutty-06.jpeg">
+            <img alt="Memory 6" src="assets/photos/sreekutty-06.jpeg" />
+          </button>
+        </div>
+      </section>
+
+      <section class="section message" id="message">
+        <div class="section-header reveal">
+          <h2>Birthday Message</h2>
+          <p>A warm note, just for you.</p>
+        </div>
+        <div class="message-card reveal">
+          <div class="sparkle-heart" aria-hidden="true"></div>
+          <p class="typewriter" id="typewriter" data-message="May your heart be light, your dreams be bold, and every chapter ahead shimmer with wonder. Thank you for being you."></p>
+          <span class="signature">With all my love</span>
+        </div>
+      </section>
+
+      <section class="section surprise" id="surprise">
+        <div class="section-header reveal">
+          <h2>Surprise Section</h2>
+          <p>A little extra sparkle just for you.</p>
+        </div>
+        <div class="surprise-card reveal">
+          <button class="primary-btn" id="surprise-btn">Click for a Surprise 🎁</button>
+          <div class="surprise-3d" aria-hidden="true">
+            <canvas id="surprise-canvas"></canvas>
+            <div class="surprise-glow"></div>
+            <div class="love-frame" aria-hidden="true">
+              <span class="love-heart h1">♥</span>
+              <span class="love-heart h2">♥</span>
+              <span class="love-heart h3">♥</span>
+              <span class="love-heart h4">♥</span>
+            </div>
+          </div>
+          <div class="surprise-note">A cake just for you.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Made with ❤️ for <span id="footer-name">Sreekutty</span></span>
+        <span class="footer-note">Music: “Happy Birthday Instrumental” (Orange Free Sounds, CC BY 4.0)</span>
+        <div class="footer-orbs" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+      <img id="lightbox-img" alt="Enlarged memory" />
+    </div>
+
+    <audio id="birthday-audio" preload="none">
+      <source src="assets/birthday.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
